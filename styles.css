@@ -29,6 +29,8 @@ body{
     background-blend-mode: color;
     background-attachment: fixed;
     border-radius: 0px 0px 15px 15px;
+    position: fixed;
+    z-index: 1000000000;
 }
 .header h2{
     color: antiquewhite;
@@ -99,7 +101,22 @@ body{
     font-size: 2em;
     font-family: "Righteous";
     position: sticky;
-    top: 8vh;
+    top: 12vh;
+}
+
+.content_main .section.sobremi{
+    top: 12vh;
+}
+
+#sobremi p:first-of-type{
+    margin-top: 100px;
+}
+
+#sobremi p{
+    font-size: 1.5em;
+    margin: 20px;
+    text-align: justify;
+    line-height: 1.5em;
 }
 
 .link_up{
@@ -112,4 +129,5 @@ body{
     font-size: 2em;
     text-align: center;
     border-radius: 10px;
+    /*z-index: 100; Sirve para darle profundidad a los elementos, si hay varios elementos superpuestos, el que tenga mayor z-index se vera primero*/
 }
