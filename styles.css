@@ -188,7 +188,7 @@ body{
     }
 
     .content_main .section p{
-        font-size: 1.5em;
+        font-size: 1em;
     }
 
     .content_main .section img{
@@ -198,7 +198,7 @@ body{
         margin-top: 100px;
         margin-bottom: 10px;
         shape-outside: circle();
-        shape-margin: 15px;
+        shape-margin: 20px;
         }
 }
 
