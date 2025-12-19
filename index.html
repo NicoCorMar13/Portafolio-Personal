@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     </head>
     <body>
-        <header class="header" id="cabecera">
+        <header class="header" id="header">
             <h2 class="header_title">Nicolas</h2>
             <nav class="header_nav">
                 <ul class="list">
@@ -19,18 +19,25 @@
                     <li><a href="#proyectos">Proyectos</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
+                <select name="selector" id="header_selector" onchange="location.href=this.value"><!--cajon con opciones desplegable-->
+                    <option value="" selected disabled hidden>Secciones</option>
+                    <option value="#sobremi">Sobre mi</option>
+                    <option value="#habilidades">Habilidades</option>
+                    <option value="#proyectos">Proyectos</option>
+                    <option value="#contacto">Contacto</option>
+                </select>
+                <aside class="header_networks"><!--Para poner las redes sociales-->
+                    <a href="https://www.instagram.com/nicocorrales?igsh=bmxvaWE0b290bGY1" target="_blank" rel="noopener noreferrer"><!--El tarjet y el rel son para que no se abra en la misma pestaña y no haya problemas de seguridad-->
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1DWhTPTNJs/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://github.com/NicoCorMar13" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </aside>
             </nav>
-            <aside class="header_networks"><!--Para poner las redes sociales-->
-                <a href="https://www.instagram.com/nicocorrales?igsh=bmxvaWE0b290bGY1" target="_blank" rel="noopener noreferrer"><!--El tarjet y el rel son para que no se abra en la misma pestaña y no haya problemas de seguridad-->
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/share/1DWhTPTNJs/" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="https://github.com/NicoCorMar13" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-            </aside>
         </header>
         <main class="content_main">
             <section id="sobremi" class="section sobremi">

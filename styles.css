@@ -157,6 +157,21 @@ body{
     font-size: 1.2em;
 }
 
+.header_nav select{/*Personalizar el selector desplegable*/
+    /*display: none;*/
+    position: fixed;
+    top: 4%;
+    right: 5%;
+    background-color: transparent;
+    color: white;
+    padding: 8px 40px 8px 10px;
+    font-size: 16px;
+    outline: none;
+}
+.header_nav select option{
+    background-color: rgb(0, 63, 71);
+}
+
 @media (width <= 768px){/*Para pantallas pequeñas como las de los moviles*/
     .header_nav ul{
         display: none;
