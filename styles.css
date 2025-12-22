@@ -31,6 +31,7 @@ body{
     position: fixed;
     z-index: 1000000000;
 }
+
 .header h2{
     color: antiquewhite;
     text-align: left;
@@ -131,8 +132,10 @@ body{
     text-align: justify;
     line-height: 1.5em;
 }
+
 .content_main .section.contacto ul{
     color: white;
+    font-size: 2em;
 }
 
 .link_up{
@@ -227,36 +230,5 @@ body{
 }
 
 @media (orientation: landscape){/*Para pantallas en horizontal*/
-    /*.header_nav select{
-        display: none;
-    }*/
-    .header{
-        height: 25vh;
-    }
     
-    /*.header_nav ul{
-        display: none;
-    }*/
-
-    .content_main .section h2{
-        font-size: 1.5em;
-    }
-
-    .content_main .section_sobremi p{
-        margin-top: 10px;
-    }
-
-    .content_main .section p{
-        font-size: 1em;
-    }
-
-    .content_main .section img{
-        width: 200px;
-        height: 200px;
-        margin-left: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        shape-outside: circle();
-        shape-margin: 20px;
-    }
 }
