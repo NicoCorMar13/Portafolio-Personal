@@ -77,13 +77,12 @@ body{
 
 .content_main{
     width: 100%;
-    height: 400vh;/*el vh es para que se adapte a un porcentaje del tamaño de la ventana*/
+    /*height: 400vh;/*el vh es para que se adapte a un porcentaje del tamaño de la ventana*/
 }
 
 .content_main .section{
     width: 100%;
-    height: 100vh;
-    padding: 10px;
+    padding: 2rem;
 }
 
 .content_main .section:nth-child(even){/*Para los pares*/
@@ -91,6 +90,10 @@ body{
 }
 
 .content_main .section:nth-child(even) h2{
+    color: rgb(255, 255, 255);
+}
+
+.content_main .section:nth-child(even) p{/*Para los pares*/
     color: rgb(255, 255, 255);
 }
 
@@ -107,7 +110,7 @@ body{
     top: 12vh;
 }
 
-.content_main .section p:first-of-type{
+.content_main .section.sobremi p:first-of-type{
     margin-top: 100px;
 }
 
@@ -127,6 +130,9 @@ body{
     margin: 20px;
     text-align: justify;
     line-height: 1.5em;
+}
+.content_main .section.contacto ul{
+    color: white;
 }
 
 .link_up{
@@ -221,5 +227,36 @@ body{
 }
 
 @media (orientation: landscape){/*Para pantallas en horizontal*/
+    /*.header_nav select{
+        display: none;
+    }*/
+    .header{
+        height: 25vh;
+    }
     
+    /*.header_nav ul{
+        display: none;
+    }*/
+
+    .content_main .section h2{
+        font-size: 1.5em;
+    }
+
+    .content_main .section_sobremi p{
+        margin-top: 10px;
+    }
+
+    .content_main .section p{
+        font-size: 1em;
+    }
+
+    .content_main .section img{
+        width: 200px;
+        height: 200px;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        shape-outside: circle();
+        shape-margin: 20px;
+    }
 }
