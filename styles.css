@@ -177,6 +177,7 @@ body{
     font-size: 16px;
     outline: none;
 }
+
 .header_nav select option{
     background-color: rgb(0, 63, 71);
 }
@@ -190,6 +191,14 @@ body{
 @media (width <= 768px){/*Para pantallas pequeñas como las de los moviles*/
     .header_nav ul{
         display: none;
+    }
+
+    .header h2{
+        font-size: 6vw;
+    }
+
+    .header_nav select{/*Personalizar el selector desplegable*/
+        font-size: 2vh;
     }
 
     .content_main .section h2{
@@ -231,4 +240,19 @@ body{
 
 @media (orientation: landscape){/*Para pantallas en horizontal*/
     
+}
+
+/*Solo para dispositivos que interactuan con pantallas y el ancho de pantalla es mayor o igual a 768px. Si se le pone not en vez de only  haria todo lo contrario*/
+@media only screen and (width >= 768px){
+    
+}
+
+/*Solo para dispositivos que interactuan con pantallas y el ancho de pantalla es mayor o igual a 768px y esta en horizontal.*/
+@media only screen and (width >= 768px) and (orientation: landscape){
+    
+}
+
+/*Esto sirve para cuando se imprime la pagina cambiarle algo.*/
+@media print{
+
 }
