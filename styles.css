@@ -182,6 +182,45 @@ body{
     background-color: rgb(0, 63, 71);
 }
 
+.grid-projects{
+    max-width: 70%;
+    min-height: 50%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto, 1fr);
+    gap: 20px;
+}
+
+.grid-projects .g-item{
+    border-radius: 10px;
+    position: relative;
+    background-size: contain;
+}
+
+.grid-projects .g-item:first-of-type{
+    background-image: url('./cieloNocturno.jpg');
+}
+
+.grid-projects .g-item:nth-of-type(2){
+    background-image: url('./galaxia.jpg');
+}
+
+.grid-projects .g-item:nth-of-type(3){
+    background-image: url('./nebulosa.jpg');
+}
+
+.grid-projects .g-items .overlay{
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    background-color: rgba(0, 63, 71, 0.95);
+    width: 100%;
+    color: white;
+    font-size: 2em;
+    display: grid;
+    
+}
+
 @media (width >= 769px){/*Para pantallas grandes como las de los ordenadores*/
     .header_nav select{
         display: none;
