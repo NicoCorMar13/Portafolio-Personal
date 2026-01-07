@@ -189,24 +189,27 @@ body{
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: repeat(auto, 1fr);
     gap: 20px;
+    margin: 0 auto;
 }
 
-.grid-projects .g-item{
+.grid-projects .g-items{
+    height: 300px;
     border-radius: 10px;
     position: relative;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
 }
 
-.grid-projects .g-item:first-of-type{
-    background-image: url('./cieloNocturno.jpg');
+.grid-projects .g-items:first-of-type{
+    background-image: url('cieloNocturno.jpg');
 }
 
-.grid-projects .g-item:nth-of-type(2){
-    background-image: url('./galaxia.jpg');
+.grid-projects .g-items:nth-of-type(2){
+    background-image: url('galaxia.jpg');
 }
 
-.grid-projects .g-item:nth-of-type(3){
-    background-image: url('./nebulosa.jpg');
+.grid-projects .g-items:last-of-type{
+    background-image: url('nebulosa.jpg');
 }
 
 .grid-projects .g-items .overlay{
@@ -218,7 +221,8 @@ body{
     color: white;
     font-size: 2em;
     display: grid;
-    
+    place-items: center;
+    border-radius: 30px 30px 0 0;
 }
 
 @media (width >= 769px){/*Para pantallas grandes como las de los ordenadores*/
