@@ -105,6 +105,7 @@ body{
     font-family: "Righteous";
     position: sticky;
     top: 12vh;
+    margin-bottom: 40px;
 }
 
 .content_main .section.sobremi{
@@ -260,7 +261,23 @@ body{
         margin-bottom: 10px;
         shape-outside: circle();
         shape-margin: 20px;
-        }
+    }
+
+    .grid-projects{
+        min-height: 80%;
+        align-items: start;
+        margin-bottom: 70px;
+    }
+
+    .grid-projects .g-items .overlay{
+        height: 100%;
+        border-radius: 0;
+        background-color: rgba(0, 63, 71, 0.6);
+    }
+
+    .grid-projects .g-items{        
+        min-height: 80%;
+    }
 }
 
 @media (prefers-color-scheme: dark){/*Para el modo oscuro del sistema operativo*/
