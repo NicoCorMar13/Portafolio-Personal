@@ -311,11 +311,11 @@ body{
         margin-bottom: 70px;
     }
 
-    .grid-projects .g-items .overlay{
+    /*.grid-projects .g-items .overlay{
         height: 100%;
         border-radius: 0;
         background-color: rgba(0, 63, 71, 0.6);
-    }
+    }*/
 
     .grid-projects .g-items{        
         min-height: 80%;
