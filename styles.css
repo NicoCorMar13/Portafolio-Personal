@@ -36,6 +36,7 @@ body{
     color: antiquewhite;
     text-align: left;
     font-size: 40px;
+    /*font-size: clamp(3vw, 5vw, 8vw);  Esto sirve para decirle a la pagina en el siguiente orden el tamaño minimo, ideal, maximo. Si usamos esto en la parte @media para pantallas pequeñas no haria falta poner nada*/
     margin-left: 2%;
     padding: 10px;
     position: fixed;
