@@ -19,7 +19,7 @@ body{
 
 .header{
     width: 100%;/*si se le pone 'vw' detras del 100, en vez del %, es para que ocupe el ancho completo de la ventana del navegador*/
-    height: 12vh;
+    height: 100px;
     /*Si quitamos width y ponemos en height 100vh, cogera toda la pantalla, y si en position en vez de fixed ponemos relative, se desplazara hacia arriba hasta que se quite*/
     background-color: rgb(0, 63, 71, 0.2);
     background-image: url('cieloNocturno.jpg');
@@ -44,7 +44,7 @@ body{
 
 .header .header_nav{
     margin: auto;
-    width: 100vw;
+    width: 100%;
     height: 10vh;
     padding: 10px;
 }
@@ -71,6 +71,22 @@ body{
 .header_nav ul li a{
     text-decoration: none;
     color: rgb(184, 171, 171);
+    position: relative;
+}
+
+.header_nav ul li a::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 0;
+    background-color: white;
+    transition: all .5s ease;/*Le decimos con all que haga transicion en todo, que dure 0.5s, y que lo haga de manera 'ease'*/
+}
+
+.header_nav ul li a:hover::before{/*Esto es para cuando pasamos el cursor sobre los enlaces del menú se ponga una linea debajo*/
+    width: 100%;
 }
 
 .header_nav ul li a:hover{/*Esto es para cuando pasamos el cursor sobre los enlaces del menú se ponga en blanco*/
@@ -99,22 +115,174 @@ body{
     color: rgb(255, 255, 255);
 }
 
+.content_main .section:first-of-type h2{/*Para el titulo Sobre Mi*/
+    margin-top: 100px;
+}
+
 .content_main .section h2{
     color: rgb(42, 42, 88);
     text-align: center;
     font-size: 2em;
     font-family: "Righteous";
-    position: sticky;
-    top: 12vh;
+    position: sticky;/*Hace que el elemento se quede fijo en la posicion que le digamos al hacer scroll*/
+    top: 100px;
     margin-bottom: 40px;
 }
 
-.content_main .section.sobremi{
+/*.content_main .section.sobremi{
     top: 12vh;
+}*/
+
+/*.content_main .section.sobremi p:first-of-type{
+    margin-top: 100px;
+}*/
+
+.content_main .habilidades{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.content_main .section.sobremi p:first-of-type{
-    margin-top: 100px;
+.content_main .habilidades .container_habilidades{
+    width: 70%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.container_habilidades [class^="habilidad"]{/*Lo que esta entre cajas es para decirle que coja todas las clases que empiecen por 'habilidad'*/
+    min-height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.container_habilidades [class^="habilidad"] .progreso{
+    width: 95%;
+    height: 20px;
+    background-color: white;
+    position: relative;
+    /*border-radius: 15px;
+    overflow: hidden;*/
+}
+
+.container_habilidades [class^="habilidad"] .progreso .barra{
+    height: 100%;
+    background-color: rgba(0, 63, 71, 0.6);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    position: relative;
+}
+
+.container_habilidades [class^="habilidad"]:first-of-type .progreso .barra{/*Barra de progreso*/
+    width: 85%;
+    animation-name: moveXHTML;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    /*animation-delay: 6s;Tiempo que tarda en empezar la animacion*/
+    animation-iteration-count: 1;/*Numero de veces que se repite la animacion. Si se pone infinite, se repetira infinitamente*/
+    animation-direction: alternate;/*normal(de 0 a 100), reverse(de 100 a 0), alternate(de 0 a 100, de 100 a 0, y asi las veces que pusimos), alternate-reverse(al reves que la anterior)*/
+}
+
+.container_habilidades [class^="habilidad"]:first-of-type .progreso .barra::after{/*Numero de las barras de progreso*/
+    content: '85%';
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    /*border-radius: 50%;
+    background-color: rgb(0, 25, 28);*/
+    width: 30px;
+    height: 30px;
+    /*display: flex;
+    align-items: center;
+    padding: 10px;*/
+}
+
+.container_habilidades [class^="habilidad"]:nth-of-type(2) .progreso .barra{
+    width: 80%;
+    animation-name: moveXCSS;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+.container_habilidades [class^="habilidad"]:nth-of-type(2) .progreso .barra::after{
+    content: '80%';
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    /*border-radius: 50%;
+    background-color: rgb(0, 25, 28);*/
+    width: 30px;
+    height: 30px;
+}
+
+.container_habilidades [class^="habilidad"]:nth-of-type(3) .progreso .barra{
+    width: 15%;
+    animation-name: moveXJS;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+.container_habilidades [class^="habilidad"]:nth-of-type(3) .progreso .barra::after{
+    content: '15%';
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    /*border-radius: 50%;
+    background-color: rgb(0, 25, 28);*/
+    width: 30px;
+    height: 30px;
+}
+
+.container_habilidades [class^="habilidad"]:nth-of-type(4) .progreso .barra{
+    width: 15%;
+    animation-name: moveXPHP;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+.container_habilidades [class^="habilidad"]:nth-of-type(4) .progreso .barra::after{
+    content: '15%';
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    /*border-radius: 50%;
+    background-color: rgb(0, 25, 28);*/
+    width: 30px;
+    height: 30px;
+}
+
+.container_habilidades [class^="habilidad"]:last-of-type .progreso .barra{
+    width: 15%;
+    animation-name: moveXMYSQL;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+.container_habilidades [class^="habilidad"]:last-of-type .progreso .barra::after{
+    content: '15%';
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    /*border-radius: 50%;
+    background-color: rgb(0, 25, 28);*/
+    width: 30px;
+    height: 30px;
 }
 
 /*.content_main .section img{
@@ -155,13 +323,13 @@ body{
 
 .header .header_networks{/*cajon de redes sociales*/
     position: absolute;
-    top: 60%;
+    top: 56%;
     left: 2.7%;
     width: max-content;
     padding: 10px;/*espacio entre el interior y el borde*/
     border: 1px solid white;
     border-radius: 8px 8px 0 0;
-    box-shadow: 3px 3px 10px white;/*sombra*/
+    box-shadow: 0px 0px 10px white;/*sombra*/
 }
 
 .header .header_networks a i{
@@ -170,6 +338,26 @@ body{
     padding: auto;
     /*display: flex;
     flex-wrap: wrap;*/
+    transition-property: color;/*Le indicamos a que queremos que afecte la transicion*/
+    transition-duration: 0.5s;/*Indicamos cuanto queremos que dure la transicion*/
+    transition-timing-function: ease-in-out;/*Indicamos como queremos que sea la transicion. Para ver otros tipos de transiciones visitar la pagina https://cubic-bezier.com/#.17,.67,.83,.67*/
+    /*transition-delay: 3s;Indicamos el tiempo que queremos que tarde en empezar la transicion*/
+}
+
+.header .header_networks a:first-of-type i:hover{/*Logo de insta*/
+    color: orange;
+}
+
+.header .header_networks a:nth-of-type(2) i:hover{/*Logo de facebook*/
+    color: cyan;
+    /*background-color: white;
+    border-radius: 50%;*//*Estas dos lineas serian para darle fondo y hacerlo redondo, pro no me agrada como queda*/
+}
+
+.header .header_networks a:nth-of-type(3) i:hover{/*Logo de github*/
+    color: greenyellow;
+    /*background-color: white;
+    border-radius: 50%;*//*Estas dos lineas serian para darle fondo y hacerlo redondo, pro no me agrada como queda*/
 }
 
 .header_nav select{/*Personalizar el selector desplegable*/
@@ -353,6 +541,14 @@ body{
         width: 90%;
     }
 
+    .habilidades{
+        align-items: normal;
+    }
+
+    .container_habilidades{
+        width: 100%;
+    }
+
 }
 
 @media (prefers-color-scheme: dark){/*Para el modo oscuro del sistema operativo*/
@@ -394,4 +590,56 @@ body{
 /*Esto sirve para cuando se imprime la pagina cambiarle algo.*/
 @media print{
 
+}
+
+/*ANIMACIONES*/
+
+@keyframes moveXHTML {/*Esto es para hacer una animacion de la barra de progreso*/
+    from{
+        width: 0%;
+    }
+
+    to{
+        width: 85%;
+    }
+}
+
+@keyframes moveXCSS {/*Esto es para hacer una animacion de la barra de progreso*/
+    from{
+        width: 0%;
+    }
+
+    to{
+        width: 80%;
+    }
+}
+
+@keyframes moveXJS {/*Esto es para hacer una animacion de la barra de progreso*/
+    from{
+        width: 0%;
+    }
+
+    to{
+        width: 15%;
+    }
+}
+
+@keyframes moveXPHP {/*Esto es para hacer una animacion de la barra de progreso*/
+    from{
+        width: 0%;
+    }
+
+    to{
+        width: 15%;
+    }
+}
+
+@keyframes moveXMYSQL {/*Esto es para hacer una animacion de la barra de progreso*/
+    from{
+        width: 0%;
+    }
+
+    to{
+        width: 15%;
+    }
 }
