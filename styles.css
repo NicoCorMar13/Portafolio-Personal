@@ -388,7 +388,71 @@ body{
     margin: 0 auto;
 }
 
+/*A partir de aqui es el codigo para las tarjetas de proyectos que dan la vuelta al pasar el raton*/
 .grid-projects .g-items{
+    perspective: 2000px;/*Sirve para dar profundidad al elemento 3D, mientras menos valor mas se distorsiona y parece que esta mas cerca*/
+}
+
+.grid-projects .card{
+    width: 100%;/*Ancho de la tarjeta*/
+    height: 300px;/*Altura de la tarjeta*/
+    position: relative;/*Para que los elementos hijos se posicionen en relacion a este elemento*/
+    transform-style: preserve-3d;/*Hace que los elementos hijos se posicionen en 3D*/
+}
+
+.grid-projects .card:hover{
+    transform: rotateY(180deg);/*Hace que la tarjeta gire 180 grados en el eje Y al pasar el raton por encima*/
+    transition: transform 0.8s;/*Hace que la transicion del giro dure 0.8 segundos*/
+}
+
+.grid-projects .front, .back{
+    width: 100%;
+    height: 100%;
+    position: absolute;/*Para que los elementos se posicionen en relacion a su padre*/
+    backface-visibility: hidden;/*Hace que la cara trasera no sea visible cuando se gira la tarjeta*/
+    border-radius: 10px;
+}
+
+.grid-projects .front .overlay{
+    position: absolute;/*Para que el overlay se posicione en relacion a su padre*/
+    bottom: 0;/*Para que el overlay se posicione en la parte inferior de su padre*/
+    height: 50%;/*Altura del overlay*/
+    background-color: rgba(0, 63, 71, 0.95);/*Color de fondo del overlay*/
+    width: 100%;/*Ancho del overlay*/
+    color: white;/*Color del texto del overlay*/
+    font-size: 2em;/*Tamaño del texto del overlay*/
+    display: grid;/*Hace que el overlay sea un grid*/
+    place-items: center;/*Hace que el contenido del overlay se centre*/
+    border-radius: 30px 30px 0px 0px;/*Bordes*/
+}
+
+.grid-projects .front img{
+    width: 100%;/*Ancho de la imagen*/
+    height: 100%;/*Altura de la imagen*/
+    border-radius: 10px;/*Bordes redondeados de la imagen*/
+    object-fit: cover;/*Hace que la imagen se ajuste al contenedor sin deformarse*/
+}
+
+.grid-projects .back{
+    background-color: rgba(0, 63, 71, 0.95);/*Color de fondo de la cara trasera*/
+    transform: rotateY(180deg);/*Hace que la cara trasera este girada 180 grados*/
+    display: flex;/*Hace que la cara trasera sea un flexbox*/
+    align-items: center;/*Hace que el contenido de la cara trasera se centre verticalmente*/
+    justify-content: center;/*Hace que el contenido de la cara trasera se centre horizontalmente*/
+    color: white;/*Color del texto de la cara trasera*/
+    font-size: 10px;/*Tamaño del texto de la cara trasera*/
+    padding: 20px;/*Espacio entre el borde y el contenido de la cara trasera*/
+}
+
+.grid-projects .back h2{
+    color: white;
+    margin-top: 20px;
+}
+/*Hasta aqui lo de dar la vuelta a la tarjeta*/
+
+/*Lo siguiente es para mostrar las tarjetas de proyectos cuando se quiere que al pasar el raton se suba el letrero por la imagen completa*/
+/*Activar si se quiere eso y no lo de dar la vuelta a la tarjeta*/
+/*.grid-projects .g-items{
     height: 300px;
     border-radius: 10px;
     position: relative;
@@ -425,7 +489,8 @@ body{
 .grid-projects .g-items:hover .overlay{
     height: 100%;
     background-color: rgba(0, 63, 71, 0.6);
-}
+}*/
+/*Hasta aqui lo de cubrir la tarjeta al pasar el raton*/
 
 .information{
     width: 100%;
