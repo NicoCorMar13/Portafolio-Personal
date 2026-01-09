@@ -361,13 +361,15 @@ body{
 }
 
 .header_nav select{/*Personalizar el selector desplegable*/
+    /*width: 20vh;
+    height: 5vh;*/
     position: fixed;
     top: 4%;
     right: 5%;
     background-color: transparent;
     color: white;
     padding: 8px 40px 8px 10px;
-    font-size: 16px;
+    font-size: 16vh;
     outline: none;
 }
 
@@ -468,7 +470,7 @@ body{
     }
 
     .header_nav select{/*Personalizar el selector desplegable*/
-        font-size: 2vh;
+        font-size: 16PX;
     }
 
     .content_main .section h2{
