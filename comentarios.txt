@@ -1,0 +1,6 @@
+- En el video donde estuve viendo lo de las notificaciones push, tiene un archivo llamado 'package.json', donde tiene los modulos necesarios para la aplicacion, tendria
+que informarme mejor de como va eso, como escribirlo, en este caso para las notificaciones push, el usuario del video usa ' "web-push": "^3.4.3" '. Tengo que investigar mas 
+para saber donde ponerlo específicamente, pudiendo mirarlo en la aplicacion de los partes. El usuario del video lo tiene en una carpeta llamada src.
+
+- SOLUCIONADO PUNTO ANTERIOR: con ayuda de chatGPT, he instalado webpush, creando la carpeta 'node_modules' y los archivos 'package-lock.json' y 'package.json' con la 
+terminal, usando el comando 'npm install web-push'
