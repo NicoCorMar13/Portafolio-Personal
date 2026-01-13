@@ -4,3 +4,6 @@ para saber donde ponerlo específicamente, pudiendo mirarlo en la aplicacion de 
 
 - SOLUCIONADO PUNTO ANTERIOR: con ayuda de chatGPT, he instalado webpush, creando la carpeta 'node_modules' y los archivos 'package-lock.json' y 'package.json' con la 
 terminal, usando el comando 'npm install web-push'
+
+- Ver porque no abre el archivo index.js de la carpeta src --> CORREGIDO -->
+--> Ahora no es capaz de leer el valor de las variables de las llaves
