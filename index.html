@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width", initial-scale="1.0"><!--'name' es para palabras claves para que cuando un usuario haga una busqueda pueda encontrar nuestra pagina, y 'content' es para que
         en la busqueda salga un breve resumen o algo de nuestra pagina-->
         <title>Portafolio CSS</title>
-        <link rel="stylesheet" href="styles.min.css">
+        <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     </head>
     <body>
@@ -178,21 +178,61 @@
                     <li>Correo electrónico: nicolas.cormar@gmail.com</li>
                 </ul>-->
                 <!--Lo anterior es algo que puse al principio hasta que llegaramos hasta este apartado en el curso-->
-                <form class="contact_form">
+                <form class="contact_form" id="contact">
                     <div class="form_user">
                         <label for="name">Nombre</label>
-                        <input type="text" id="name">
+                        <input type="text" id="name" required>
                     </div>
                     <div class="form_email">
                         <label for="email">Email</label>
-                        <input type="email" id="email">
+                        <input type="email" id="email" required>
                     </div>
                     <div class="form_message">
                         <label for="message">Mensaje</label>
-                        <textarea id="message"></textarea>
+                        <textarea id="message" required></textarea>
                     </div>
+                    <button type="submit" class="btn_send">Enviar mensaje</button>
+                    <p id="form_error"></p>
                 </form>
             </section>
         </main>
         <a href="#sobremi" class="link_up">&#8593</a><!--Ponemos el enlace a #sobremi porque no podemos a la cabecera, ya que esta está siempre fija-->
+
+        <!--JavaScript del formulario-->
+        <script>
+            document.getElementById("contact").addEventListener("submit", function(e){
+                e.preventDefault();
+
+                /*Recogemos los datos de los cuadros de texto*/
+                const nombre = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const mensaje = document.getElementById("messaje").value.trim();
+                const error = document.getElementById("form_error");
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                /*Comprobamos que los cuadros de texto esten rellenos, si no avisamos al usuario que los rellene*/
+                if (!nombre || !email || !mensaje) {
+                    error.textContent = "Todos los campos son obligatorios.";
+                    error.style.color ="red";
+                    return;
+                }
+
+                /*Comprobamos que el email introducido por el usuario sea valido, sino le avisamos para que lo corrija*/
+                if (!emailRegex.test(email)) {
+                    error.textContent = "Introduce un email válido.";
+                    error.style.color = "red";
+                    return;
+                }
+
+                error.textContent = "";/*Ponemos el mensaje vacío una vez este todo correcto*/
+
+                /*Creamos el asunto y el mensaje para enviar el correo*/
+                const asunto = encodeURIComponent("Contacto desde tu portafolio");
+                const cuerpo = encodeURIComponent('Nombre: ${nombre}\nEmail: ${email}\n\nMensaje: \n${mensaje}');
+
+                window.location.href = "mailto:corralesnick13@gmail.com?subject=" + asunto + "&body=" + cuerpo;
+            });
+        </script>
+    </body>
 </html>
