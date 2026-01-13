@@ -169,14 +169,29 @@
             </section>
             <section id="contacto" class="section contacto">
                 <h2>Contacto</h2>
-                <p>
+                <!--<p>
                     Si le interesa contactar conmigo puede hacerlo a traves de los siguientes canales:
                 </p>
                 <ul>
                     <li>Redes sociales: disponibles en los iconos de arriba a la izquierda</li>
                     <li>Teléfono: +346573492563</li>
                     <li>Correo electrónico: nicolas.cormar@gmail.com</li>
-                </ul>
+                </ul>-->
+                <!--Lo anterior es algo que puse al principio hasta que llegaramos hasta este apartado en el curso-->
+                <form class="contact_form">
+                    <div class="form_user">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name">
+                    </div>
+                    <div class="form_email">
+                        <label for="email">Email</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="form_message">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message"></textarea>
+                    </div>
+                </form>
             </section>
         </main>
         <a href="#sobremi" class="link_up">&#8593</a><!--Ponemos el enlace a #sobremi porque no podemos a la cabecera, ya que esta está siempre fija-->
