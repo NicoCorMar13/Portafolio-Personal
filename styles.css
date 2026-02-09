@@ -298,11 +298,10 @@ body{
 }*/
 
 .content_main .proyectos a{
+    display: block;
     color: inherit;
-    text-decoration: none;
-    font-size: large;
     text-align: center;
-    text-transform: lowercase;
+    font-size: large;
 }
 
 .content_main .section p{
