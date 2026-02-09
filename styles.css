@@ -17,6 +17,12 @@ body{
     height: 100%;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+    font-size: large;
+}
+
 .header{
     width: 100%;/*si se le pone 'vw' detras del 100, en vez del %, es para que ocupe el ancho completo de la ventana del navegador*/
     height: 100px;
@@ -447,11 +453,6 @@ body{
 .grid-projects .back h2{
     color: white;
     margin-top: 20px;
-}
-
-.grid-projects a{
-    color: white;
-    text-align: center;
 }
 /*Hasta aqui lo de dar la vuelta a la tarjeta*/
 
