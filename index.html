@@ -184,16 +184,17 @@
                 <form class="contact_form" id="contact">
                     <div class="form_user">
                         <label for="name">Nombre</label>
-                        <input type="text" id="name" required>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form_email">
                         <label for="email">Email</label>
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form_message">
                         <label for="message">Mensaje</label>
-                        <textarea id="message" required></textarea>
+                        <textarea id="message" name="message" required></textarea>
                     </div>
+                    <input type="text" name="website" id="website" style="display:none" tabindex="-1" autocomplete="off"><!--Campo oculto para detectar bots, si se rellena es que es un bot, por eso se oculta con display none, y el tabindex -1 es para que no se pueda acceder a él con el teclado, y el autocomplete off es para que no se rellene automáticamente-->
                     <button type="submit" class="btn_send">Enviar mensaje</button>
                     <p id="form_error"></p>
                 </form>
@@ -203,38 +204,57 @@
 
         <!--JavaScript del formulario-->
         <script>
-            document.getElementById("contact").addEventListener("submit", function(e){
+            const ENDPOINT = "https://TU-PROYECTO.vercel.app/api/contact"; // <-- cambia esto
+
+            document.getElementById("contact").addEventListener("submit", async function(e) {
                 e.preventDefault();
 
-                /*Recogemos los datos de los cuadros de texto*/
                 const nombre = document.getElementById("name").value.trim();
                 const email = document.getElementById("email").value.trim();
-                const mensaje = document.getElementById("messaje").value.trim();
+                const mensaje = document.getElementById("message").value.trim();
+                const website = document.getElementById("website")?.value || "";
                 const error = document.getElementById("form_error");
 
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-                /*Comprobamos que los cuadros de texto esten rellenos, si no avisamos al usuario que los rellene*/
                 if (!nombre || !email || !mensaje) {
                     error.textContent = "Todos los campos son obligatorios.";
-                    error.style.color ="red";
+                    error.style.color = "red";
                     return;
                 }
 
-                /*Comprobamos que el email introducido por el usuario sea valido, sino le avisamos para que lo corrija*/
                 if (!emailRegex.test(email)) {
                     error.textContent = "Introduce un email válido.";
                     error.style.color = "red";
                     return;
                 }
 
-                error.textContent = "";/*Ponemos el mensaje vacío una vez este todo correcto*/
+                error.textContent = "Enviando...";
+                error.style.color = "white";
 
-                /*Creamos el asunto y el mensaje para enviar el correo*/
-                const asunto = encodeURIComponent("Contacto desde tu portafolio");
-                const cuerpo = encodeURIComponent('Nombre: ${nombre}\nEmail: ${email}\n\nMensaje: \n${mensaje}');
+                try {
+                    const res = await fetch(ENDPOINT, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name: nombre, email, message: mensaje, website })
+                    });
 
-                window.location.href = "mailto:corralesnick13@gmail.com?subject=" + asunto + "&body=" + cuerpo;
+                    const out = await res.json().catch(() => ({}));
+
+                    if (!res.ok) {
+                        error.textContent = out.error || "Error enviando el mensaje.";
+                        error.style.color = "red";
+                        return;
+                    }
+
+                    error.textContent = "Mensaje enviado ✅";
+                    error.style.color = "lightgreen";
+                    e.target.reset();
+
+                } catch (err) {
+                    error.textContent = "No se pudo conectar con el servidor.";
+                    error.style.color = "red";
+                }
             });
         </script>
     </body>
