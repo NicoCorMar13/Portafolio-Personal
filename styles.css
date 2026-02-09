@@ -454,7 +454,7 @@ body{
 .grid-projects .back h2{
     color: white;
     margin-top: 20px;
-    position: relative;
+    position: top;
 }
 /*Hasta aqui lo de dar la vuelta a la tarjeta*/
 
