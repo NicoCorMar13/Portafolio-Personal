@@ -32,7 +32,7 @@ export default async function handler(req, res) {
     if (!name || !email || !message) return res.status(400).json({ error: "Faltan campos" });
     if (!isValidEmail(email)) return res.status(400).json({ error: "Email no válido" });
 
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: process.env.FROM_EMAIL,
       to: process.env.TO_EMAIL,
       replyTo: email,
@@ -40,8 +40,18 @@ export default async function handler(req, res) {
       text: `Nombre: ${name}\nEmail: ${email}\n\nMensaje:\n${message}`,
     });
 
-    return res.status(200).json({ ok: true });
+    // Si Resend devuelve error, lo propagamos
+    if (result?.error) {
+      console.error("RESEND ERROR:", result.error);
+      return res
+        .status(502)
+        .json({ error: result.error.message || "Resend rechazó el envío" });
+    }
+
+    // OK real
+    return res.status(200).json({ ok: true, id: result.data?.id });
   } catch (e) {
+    console.error("CONTACT ERROR:", e);
     return res.status(500).json({ error: "Error enviando el email" });
   }
 }

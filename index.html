@@ -204,57 +204,59 @@
 
         <!--JavaScript del formulario-->
         <script>
-            const ENDPOINT = "https://portafolio-personal-backend.vercel.app/api/contact";
+  const ENDPOINT = "https://portafolio-personal-backend.vercel.app/api/contact";
 
-            document.getElementById("contact").addEventListener("submit", async function(e) {
-                e.preventDefault();
+  document.getElementById("contact").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-                const nombre = document.getElementById("name").value.trim();
-                const email = document.getElementById("email").value.trim();
-                const mensaje = document.getElementById("message").value.trim();
-                const website = document.getElementById("website")?.value || "";
-                const error = document.getElementById("form_error");
+    const nombre = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mensaje = document.getElementById("message").value.trim();
+    const website = document.getElementById("website")?.value || "";
+    const error = document.getElementById("form_error");
 
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-                if (!nombre || !email || !mensaje) {
-                    error.textContent = "Todos los campos son obligatorios.";
-                    error.style.color = "red";
-                    return;
-                }
+    if (!nombre || !email || !mensaje) {
+      error.textContent = "Todos los campos son obligatorios.";
+      error.style.color = "red";
+      return;
+    }
 
-                if (!emailRegex.test(email)) {
-                    error.textContent = "Introduce un email válido.";
-                    error.style.color = "red";
-                    return;
-                }
+    if (!emailRegex.test(email)) {
+      error.textContent = "Introduce un email válido.";
+      error.style.color = "red";
+      return;
+    }
 
-                error.textContent = "Enviando...";
-                error.style.color = "white";
+    error.textContent = "Enviando...";
+    error.style.color = "white";
 
-                try {
-                    const result = await resend.emails.send({
-                        from: process.env.FROM_EMAIL,
-                        to: process.env.TO_EMAIL,
-                        replyTo: email,
-                        subject: `Nuevo mensaje web: ${name}`,
-                        text: `Nombre: ${name}\nEmail: ${email}\n\nMensaje:\n${message}`,
-                    });
+    try {
+      const response = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: nombre, email, message: mensaje, website }),
+      });
 
-                    if (result?.error) {
-                        console.error("RESEND ERROR:", result.error);
-                        return res.status(502).json({ error: result.error.message || "Resend rechazó el envío" });
-                    }
+      const data = await response.json().catch(() => ({}));
 
-                    error.textContent = "Mensaje enviado ✅";
-                    error.style.color = "lightgreen";
-                    e.target.reset();
+      if (!response.ok) {
+        error.textContent = data.error || "Error enviando el mensaje.";
+        error.style.color = "red";
+        return;
+      }
 
-                } catch (e) {
-                    console.error("CONTACT ERROR:", e);
-                    return res.status(500).json({ error: e?.message || "Error enviando el email" });
-                }
-            });
-        </script>
+      error.textContent = "Mensaje enviado ✅";
+      error.style.color = "lightgreen";
+      e.target.reset();
+    } catch (err) {
+      console.error("FETCH ERROR:", err);
+      error.textContent = "No se pudo conectar con el servidor.";
+      error.style.color = "red";
+    }
+  });
+</script>
+
     </body>
 </html>
