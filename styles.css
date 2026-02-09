@@ -301,6 +301,8 @@ body{
     color: inherit;
     text-decoration: none;
     font-size: large;
+    text-align: center;
+    text-transform: lowercase;
 }
 
 .content_main .section p{
