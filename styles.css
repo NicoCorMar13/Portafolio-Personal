@@ -551,6 +551,7 @@ body{
 }
 
 .contact_form [class^="form"] label{/*Editamos los nombres de las cajas del apartado contacto*/
+    font-size: 20px;
     color: white;
 }
 
@@ -667,6 +668,10 @@ body{
 
     .container_habilidades{
         width: 100%;
+    }
+
+    .contact_form [class^="form"]{/*Selecciona todas las clases que empiecen por 'form'*/
+    width: 90%;
     }
 
 }
