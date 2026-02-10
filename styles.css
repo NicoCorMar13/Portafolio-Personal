@@ -437,6 +437,10 @@ body {
     /*Para que los elementos hijos se posicionen en relacion a este elemento*/
     transform-style: preserve-3d;
     /*Hace que los elementos hijos se posicionen en 3D*/
+    /*-----------*/
+    border-radius: 10px;
+    overflow: hidden;
+    /*-----------*/
 }
 
 .grid-projects .card:hover {
@@ -447,7 +451,7 @@ body {
 }
 
 .grid-projects .front,
-.back {
+.grid-projects .back {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -455,6 +459,9 @@ body {
     backface-visibility: hidden;
     /*Hace que la cara trasera no sea visible cuando se gira la tarjeta*/
     border-radius: 10px;
+    /*-----------*/
+    inset: 0;
+    /*-----------*/
 }
 
 .grid-projects .front .overlay {
@@ -478,7 +485,13 @@ body {
     /*Hace que el contenido del overlay se centre*/
     border-radius: 30px 30px 0px 0px;
     /*Bordes*/
-}
+    /*-----------*/
+    left: 0;
+    right: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*-----------*/
+    }
 
 .grid-projects .front img {
     width: 100%;
@@ -772,10 +785,10 @@ body {
     /* 3) Overlay: texto y caja más “mobile-friendly” */
     .grid-projects .front .overlay {
         font-size: clamp(18px, 5vw, 26px);
-        height: 42%;
+        height: 40%;
         /* antes 50% */
         padding: 12px;
-        border-radius: 18px 18px 0 0;
+        border-radius: 16px 16px 0 0;
         /* antes 30px */
         text-align: center;
     }
