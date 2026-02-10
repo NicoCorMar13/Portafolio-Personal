@@ -295,6 +295,10 @@ body {
 
 /*====HABILIDADES====*/
 
+.content_main .habilidades h2{
+    position: inherit;
+}
+
 .content_main .habilidades {
     display: flex;
     flex-direction: column;
