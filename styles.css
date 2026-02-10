@@ -249,7 +249,7 @@ body {
 .content_main .section p {
     font-size: 2em;
     margin: 20px;
-    text-align: justify;
+    text-align: center;
     line-height: 1.5em;
 }
 
@@ -288,6 +288,7 @@ body {
     color: black;
     width: 30%;
     font-size: 2vw;
+    text-align: center;
 }
 
 /*========*/
@@ -543,19 +544,30 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    gap: 12px;
 }
 
 .grid-projects .back .description h2{
     position: inherit;
-    font-size: 12px;
+    font-size: 27px;
+    margin-bottom: 0;
 }
 
 .grid-projects .back .description p{
-    font-size: 10px;
+    font-size: 23px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .grid-projects .back .description a{
+    font-size: 20px;
+    text-decoration: none;
     color: inherit;
+}
+
+.grid-projects .back .description a:hover{
+    color: greenyellow;
 }
 
 
@@ -701,16 +713,6 @@ body {
         font-size: 1em;
     }
 
-    .content_main .section img {
-        width: 150px;
-        height: 150px;
-        margin-left: 10px;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        shape-outside: circle();
-        shape-margin: 20px;
-    }
-
     .content_main .section.contacto ul {
         font-size: 1em;
     }
@@ -773,18 +775,22 @@ body {
 
     .grid-projects {
         min-height: 80%;
+        max-width: 70%;
         align-items: start;
         margin-bottom: 70px;
     }
 
-    /*.grid-projects .g-items .overlay{
-        height: 100%;
-        border-radius: 0;
+    .grid-projects .g-items .overlay{
         background-color: rgba(0, 63, 71, 0.6);
-    }*/
+        text-align: center;
+    }
 
-    .grid-projects .g-items {
-        min-height: 80%;
+    .grid-projects .g-items .back h2{
+        font-size: 20px;
+    }
+
+    .grid-projects .g-items .back p{
+        font-size: 15px;
     }
 
     /*========*/
