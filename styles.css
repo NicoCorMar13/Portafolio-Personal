@@ -538,7 +538,7 @@ body {
     color: white;
     padding: 20px;
 
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
 }
