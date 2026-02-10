@@ -446,7 +446,7 @@ body {
 .grid-projects .card:hover {
     transform: rotateY(180deg);
     /*Hace que la tarjeta gire 180 grados en el eje Y al pasar el raton por encima*/
-    transition: transform 0.8s;
+    /*transition: transform 0.8s;*/
     /*Hace que la transicion del giro dure 0.8 segundos*/
 }
 
@@ -686,6 +686,74 @@ body {
     margin: 0;
     box-sizing: border-box;
 }
+
+/* ====== FLIP DEFINITIVO (PC + móvil) ====== */
+
+.grid-projects .g-items {
+    perspective: 2000px;
+}
+
+.grid-projects .card {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.8s;
+    will-change: transform;
+    border-radius: 10px;
+}
+
+.grid-projects .card:hover {
+    transform: rotateY(180deg);
+}
+
+/* Caras */
+.grid-projects .front,
+.grid-projects .back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* IMPORTANTE: fuerza el frontal */
+.grid-projects .front {
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    overflow: hidden;
+    /* recorta overlay */
+}
+
+/* Trasera */
+.grid-projects .back {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    overflow: hidden;
+}
+
+/* Imagen sin radios (los da el contenedor) */
+.grid-projects .front img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+/* Overlay pegado */
+.grid-projects .front .overlay {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 
 
 @media (width >=769px) {
