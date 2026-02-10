@@ -61,7 +61,7 @@ html, body {
     list-style: none;
     text-align: right;
     padding: 1%;
-    position: static;
+    position: fixed;
 }
 
 .header_nav ul li {
