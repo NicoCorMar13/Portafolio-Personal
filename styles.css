@@ -1,24 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Righteous&display=swap');
 
-html{
+html {
     scroll-behavior: smooth;
     box-sizing: border-box;
     font-family: "Dancing Script";
 }
 
-*{
+* {
     box-sizing: inherit;
     margin: 0;
 }
 
-body{
+body {
     width: 100%;
     height: 100%;
 }
 
-.header{
-    width: 100%;/*si se le pone 'vw' detras del 100, en vez del %, es para que ocupe el ancho completo de la ventana del navegador*/
+.header {
+    width: 100%;
+    /*si se le pone 'vw' detras del 100, en vez del %, es para que ocupe el ancho completo de la ventana del navegador*/
     height: 100px;
     /*Si quitamos width y ponemos en height 100vh, cogera toda la pantalla, y si en position en vez de fixed ponemos relative, se desplazara hacia arriba hasta que se quite*/
     background-color: rgb(0, 63, 71, 0.2);
@@ -32,7 +33,7 @@ body{
     z-index: 1000000000;
 }
 
-.header h2{
+.header h2 {
     color: antiquewhite;
     text-align: left;
     font-size: 40px;
@@ -42,14 +43,14 @@ body{
     position: fixed;
 }
 
-.header .header_nav{
+.header .header_nav {
     margin: auto;
     width: 100%;
     height: 10vh;
     padding: 10px;
 }
 
-.header_nav ul{
+.header_nav ul {
     width: 100%;
     list-style: none;
     text-align: right;
@@ -57,7 +58,7 @@ body{
     position: fixed;
 }
 
-.header_nav ul li{
+.header_nav ul li {
     font-size: 30px;
     text-align: center;
     display: inline-block;
@@ -68,13 +69,13 @@ body{
     margin-left: 5%;
 }
 
-.header_nav ul li a{
+.header_nav ul li a {
     text-decoration: none;
     color: rgb(184, 171, 171);
     position: relative;
 }
 
-.header_nav ul li a::before{
+.header_nav ul li a::before {
     content: '';
     position: absolute;
     left: 0;
@@ -82,50 +83,57 @@ body{
     height: 2px;
     width: 0;
     background-color: white;
-    transition: all .5s ease;/*Le decimos con all que haga transicion en todo, que dure 0.5s, y que lo haga de manera 'ease'*/
+    transition: all .5s ease;
+    /*Le decimos con all que haga transicion en todo, que dure 0.5s, y que lo haga de manera 'ease'*/
 }
 
-.header_nav ul li a:hover::before{/*Esto es para cuando pasamos el cursor sobre los enlaces del menú se ponga una linea debajo*/
+.header_nav ul li a:hover::before {
+    /*Esto es para cuando pasamos el cursor sobre los enlaces del menú se ponga una linea debajo*/
     width: 100%;
 }
 
-.header_nav ul li a:hover{/*Esto es para cuando pasamos el cursor sobre los enlaces del menú se ponga en blanco*/
+.header_nav ul li a:hover {
+    /*Esto es para cuando pasamos el cursor sobre los enlaces del menú se ponga en blanco*/
     color: white;
 }
 
-.content_main{
+.content_main {
     width: 100%;
     /*height: 400vh;/*el vh es para que se adapte a un porcentaje del tamaño de la ventana*/
 }
 
-.content_main .section{
+.content_main .section {
     width: 100%;
     padding: 2rem;
 }
 
-.content_main .section:nth-child(even){/*Para los pares*/
+.content_main .section:nth-child(even) {
+    /*Para los pares*/
     background-color: rgb(42, 42, 88);
 }
 
-.content_main .section:nth-child(even) h2{
+.content_main .section:nth-child(even) h2 {
     color: rgb(255, 255, 255);
 }
 
-.content_main .section:nth-child(even) p{/*Para los pares*/
+.content_main .section:nth-child(even) p {
+    /*Para los pares*/
     color: rgb(255, 255, 255);
 }
 
-.content_main .section:first-of-type h2{/*Para el titulo Sobre Mi*/
+.content_main .section:first-of-type h2 {
+    /*Para el titulo Sobre Mi*/
     margin-top: 100px;
     margin-bottom: 15px;
 }
 
-.content_main .section h2{
+.content_main .section h2 {
     color: rgb(42, 42, 88);
     text-align: center;
     font-size: 2em;
     font-family: "Righteous";
-    position: sticky;/*Hace que el elemento se quede fijo en la posicion que le digamos al hacer scroll*/
+    position: sticky;
+    /*Hace que el elemento se quede fijo en la posicion que le digamos al hacer scroll*/
     top: 100px;
     margin-bottom: 40px;
 }
@@ -138,21 +146,23 @@ body{
     margin-top: 100px;
 }*/
 
-.content_main .habilidades{
+.content_main .habilidades {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.content_main .habilidades .container_habilidades{
+.content_main .habilidades .container_habilidades {
     width: 70%;
     height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.container_habilidades [class^="habilidad"]{/*Lo que esta entre cajas es para decirle que coja todas las clases que empiecen por 'habilidad'*/
+
+.container_habilidades [class^="habilidad"] {
+    /*Lo que esta entre cajas es para decirle que coja todas las clases que empiecen por 'habilidad'*/
     min-height: 20%;
     width: 100%;
     display: flex;
@@ -164,7 +174,7 @@ body{
     color: white;
 }
 
-.container_habilidades [class^="habilidad"] .progreso{
+.container_habilidades [class^="habilidad"] .progreso {
     width: 95%;
     height: 20px;
     background-color: white;
@@ -173,7 +183,7 @@ body{
     overflow: hidden;*/
 }
 
-.container_habilidades [class^="habilidad"] .progreso .barra{
+.container_habilidades [class^="habilidad"] .progreso .barra {
     height: 100%;
     background-color: rgba(0, 63, 71, 0.6);
     position: absolute;
@@ -182,17 +192,21 @@ body{
     position: relative;
 }
 
-.container_habilidades [class^="habilidad"]:first-of-type .progreso .barra{/*Barra de progreso*/
+.container_habilidades [class^="habilidad"]:first-of-type .progreso .barra {
+    /*Barra de progreso*/
     width: 70%;
     animation-name: moveXHTML;
     animation-duration: 4s;
     animation-timing-function: ease;
     /*animation-delay: 6s;Tiempo que tarda en empezar la animacion*/
-    animation-iteration-count: 1;/*Numero de veces que se repite la animacion. Si se pone infinite, se repetira infinitamente*/
-    animation-direction: alternate;/*normal(de 0 a 100), reverse(de 100 a 0), alternate(de 0 a 100, de 100 a 0, y asi las veces que pusimos), alternate-reverse(al reves que la anterior)*/
+    animation-iteration-count: 1;
+    /*Numero de veces que se repite la animacion. Si se pone infinite, se repetira infinitamente*/
+    animation-direction: alternate;
+    /*normal(de 0 a 100), reverse(de 100 a 0), alternate(de 0 a 100, de 100 a 0, y asi las veces que pusimos), alternate-reverse(al reves que la anterior)*/
 }
 
-.container_habilidades [class^="habilidad"]:first-of-type .progreso .barra::after{/*Numero de las barras de progreso*/
+.container_habilidades [class^="habilidad"]:first-of-type .progreso .barra::after {
+    /*Numero de las barras de progreso*/
     content: '85%';
     position: absolute;
     right: 0px;
@@ -206,7 +220,7 @@ body{
     padding: 10px;*/
 }
 
-.container_habilidades [class^="habilidad"]:nth-of-type(2) .progreso .barra{
+.container_habilidades [class^="habilidad"]:nth-of-type(2) .progreso .barra {
     width: 70%;
     animation-name: moveXCSS;
     animation-duration: 4s;
@@ -215,7 +229,7 @@ body{
     animation-direction: alternate;
 }
 
-.container_habilidades [class^="habilidad"]:nth-of-type(2) .progreso .barra::after{
+.container_habilidades [class^="habilidad"]:nth-of-type(2) .progreso .barra::after {
     content: '80%';
     position: absolute;
     right: 0px;
@@ -226,7 +240,7 @@ body{
     height: 30px;
 }
 
-.container_habilidades [class^="habilidad"]:nth-of-type(3) .progreso .barra{
+.container_habilidades [class^="habilidad"]:nth-of-type(3) .progreso .barra {
     width: 50%;
     animation-name: moveXJS;
     animation-duration: 4s;
@@ -235,7 +249,7 @@ body{
     animation-direction: alternate;
 }
 
-.container_habilidades [class^="habilidad"]:nth-of-type(3) .progreso .barra::after{
+.container_habilidades [class^="habilidad"]:nth-of-type(3) .progreso .barra::after {
     content: '15%';
     position: absolute;
     right: 0px;
@@ -246,7 +260,7 @@ body{
     height: 30px;
 }
 
-.container_habilidades [class^="habilidad"]:nth-of-type(4) .progreso .barra{
+.container_habilidades [class^="habilidad"]:nth-of-type(4) .progreso .barra {
     width: 15%;
     animation-name: moveXPHP;
     animation-duration: 4s;
@@ -255,7 +269,7 @@ body{
     animation-direction: alternate;
 }
 
-.container_habilidades [class^="habilidad"]:nth-of-type(4) .progreso .barra::after{
+.container_habilidades [class^="habilidad"]:nth-of-type(4) .progreso .barra::after {
     content: '15%';
     position: absolute;
     right: 0px;
@@ -266,7 +280,7 @@ body{
     height: 30px;
 }
 
-.container_habilidades [class^="habilidad"]:last-of-type .progreso .barra{
+.container_habilidades [class^="habilidad"]:last-of-type .progreso .barra {
     width: 15%;
     animation-name: moveXMYSQL;
     animation-duration: 4s;
@@ -275,7 +289,7 @@ body{
     animation-direction: alternate;
 }
 
-.container_habilidades [class^="habilidad"]:last-of-type .progreso .barra::after{
+.container_habilidades [class^="habilidad"]:last-of-type .progreso .barra::after {
     content: '15%';
     position: absolute;
     right: 0px;
@@ -297,26 +311,26 @@ body{
     margin-top: 100px;
 }*/
 
-.content_main .proyectos a{
+.content_main .proyectos a {
     display: block;
     color: inherit;
     text-align: center;
     font-size: large;
 }
 
-.content_main .section p{
+.content_main .section p {
     font-size: 2em;
     margin: 20px;
     text-align: justify;
     line-height: 1.5em;
 }
 
-.content_main .section.contacto ul{
+.content_main .section.contacto ul {
     color: white;
     font-size: 2em;
 }
 
-.link_up{
+.link_up {
     width: 40px;
     height: 40px;
     background-color: bisque;
@@ -326,49 +340,62 @@ body{
     font-size: 2em;
     text-align: center;
     border-radius: 10px;
-    z-index: 100;/* Sirve para darle profundidad a los elementos, si hay varios elementos superpuestos, el que tenga mayor z-index se vera primero*/
+    z-index: 100;
+    /* Sirve para darle profundidad a los elementos, si hay varios elementos superpuestos, el que tenga mayor z-index se vera primero*/
 }
 
-.header .header_networks{/*cajon de redes sociales*/
+.header .header_networks {
+    /*cajon de redes sociales*/
     position: absolute;
     top: 56%;
     left: 2.7%;
     width: max-content;
-    padding: 10px;/*espacio entre el interior y el borde*/
+    padding: 10px;
+    /*espacio entre el interior y el borde*/
     border: 1px solid white;
     border-radius: 8px 8px 0 0;
-    box-shadow: 0px 0px 10px white;/*sombra*/
+    box-shadow: 0px 0px 10px white;
+    /*sombra*/
 }
 
-.header .header_networks a i{
+.header .header_networks a i {
     color: white;
     font-size: 1.2em;
     padding: auto;
     /*display: flex;
     flex-wrap: wrap;*/
-    transition-property: color;/*Le indicamos a que queremos que afecte la transicion*/
-    transition-duration: 0.5s;/*Indicamos cuanto queremos que dure la transicion*/
-    transition-timing-function: ease-in-out;/*Indicamos como queremos que sea la transicion. Para ver otros tipos de transiciones visitar la pagina https://cubic-bezier.com/#.17,.67,.83,.67*/
+    transition-property: color;
+    /*Le indicamos a que queremos que afecte la transicion*/
+    transition-duration: 0.5s;
+    /*Indicamos cuanto queremos que dure la transicion*/
+    transition-timing-function: ease-in-out;
+    /*Indicamos como queremos que sea la transicion. Para ver otros tipos de transiciones visitar la pagina https://cubic-bezier.com/#.17,.67,.83,.67*/
     /*transition-delay: 3s;Indicamos el tiempo que queremos que tarde en empezar la transicion*/
 }
 
-.header .header_networks a:first-of-type i:hover{/*Logo de insta*/
+.header .header_networks a:first-of-type i:hover {
+    /*Logo de insta*/
     color: orange;
 }
 
-.header .header_networks a:nth-of-type(2) i:hover{/*Logo de facebook*/
+.header .header_networks a:nth-of-type(2) i:hover {
+    /*Logo de facebook*/
     color: cyan;
     /*background-color: white;
-    border-radius: 50%;*//*Estas dos lineas serian para darle fondo y hacerlo redondo, pro no me agrada como queda*/
+    border-radius: 50%;*/
+    /*Estas dos lineas serian para darle fondo y hacerlo redondo, pro no me agrada como queda*/
 }
 
-.header .header_networks a:nth-of-type(3) i:hover{/*Logo de github*/
+.header .header_networks a:nth-of-type(3) i:hover {
+    /*Logo de github*/
     color: greenyellow;
     /*background-color: white;
-    border-radius: 50%;*//*Estas dos lineas serian para darle fondo y hacerlo redondo, pro no me agrada como queda*/
+    border-radius: 50%;*/
+    /*Estas dos lineas serian para darle fondo y hacerlo redondo, pro no me agrada como queda*/
 }
 
-.header_nav select{/*Personalizar el selector desplegable*/
+.header_nav select {
+    /*Personalizar el selector desplegable*/
     /*width: 20vh;
     height: 5vh;*/
     position: fixed;
@@ -381,11 +408,11 @@ body{
     outline: none;
 }
 
-.header_nav select option{
+.header_nav select option {
     background-color: rgb(0, 63, 71);
 }
 
-.grid-projects{
+.grid-projects {
     max-width: 70%;
     min-height: 50%;
     display: grid;
@@ -396,65 +423,98 @@ body{
 }
 
 /*A partir de aqui es el codigo para las tarjetas de proyectos que dan la vuelta al pasar el raton*/
-.grid-projects .g-items{
-    perspective: 2000px;/*Sirve para dar profundidad al elemento 3D, mientras menos valor mas se distorsiona y parece que esta mas cerca*/
+.grid-projects .g-items {
+    perspective: 2000px;
+    /*Sirve para dar profundidad al elemento 3D, mientras menos valor mas se distorsiona y parece que esta mas cerca*/
 }
 
-.grid-projects .card{
-    width: 100%;/*Ancho de la tarjeta*/
-    height: 300px;/*Altura de la tarjeta*/
-    position: relative;/*Para que los elementos hijos se posicionen en relacion a este elemento*/
-    transform-style: preserve-3d;/*Hace que los elementos hijos se posicionen en 3D*/
+.grid-projects .card {
+    width: 100%;
+    /*Ancho de la tarjeta*/
+    height: 300px;
+    /*Altura de la tarjeta*/
+    position: relative;
+    /*Para que los elementos hijos se posicionen en relacion a este elemento*/
+    transform-style: preserve-3d;
+    /*Hace que los elementos hijos se posicionen en 3D*/
 }
 
-.grid-projects .card:hover{
-    transform: rotateY(180deg);/*Hace que la tarjeta gire 180 grados en el eje Y al pasar el raton por encima*/
-    transition: transform 0.8s;/*Hace que la transicion del giro dure 0.8 segundos*/
+.grid-projects .card:hover {
+    transform: rotateY(180deg);
+    /*Hace que la tarjeta gire 180 grados en el eje Y al pasar el raton por encima*/
+    transition: transform 0.8s;
+    /*Hace que la transicion del giro dure 0.8 segundos*/
 }
 
-.grid-projects .front, .back{
+.grid-projects .front,
+.back {
     width: 100%;
     height: 100%;
-    position: absolute;/*Para que los elementos se posicionen en relacion a su padre*/
-    backface-visibility: hidden;/*Hace que la cara trasera no sea visible cuando se gira la tarjeta*/
+    position: absolute;
+    /*Para que los elementos se posicionen en relacion a su padre*/
+    backface-visibility: hidden;
+    /*Hace que la cara trasera no sea visible cuando se gira la tarjeta*/
     border-radius: 10px;
 }
 
-.grid-projects .front .overlay{
-    position: absolute;/*Para que el overlay se posicione en relacion a su padre*/
-    bottom: 0;/*Para que el overlay se posicione en la parte inferior de su padre*/
-    height: 50%;/*Altura del overlay*/
-    background-color: rgba(0, 63, 71, 0.95);/*Color de fondo del overlay*/
-    width: 100%;/*Ancho del overlay*/
-    color: white;/*Color del texto del overlay*/
-    font-size: 2em;/*Tamaño del texto del overlay*/
-    display: grid;/*Hace que el overlay sea un grid*/
-    place-items: center;/*Hace que el contenido del overlay se centre*/
-    border-radius: 30px 30px 0px 0px;/*Bordes*/
+.grid-projects .front .overlay {
+    position: absolute;
+    /*Para que el overlay se posicione en relacion a su padre*/
+    bottom: 0;
+    /*Para que el overlay se posicione en la parte inferior de su padre*/
+    height: 50%;
+    /*Altura del overlay*/
+    background-color: rgba(0, 63, 71, 0.95);
+    /*Color de fondo del overlay*/
+    width: 100%;
+    /*Ancho del overlay*/
+    color: white;
+    /*Color del texto del overlay*/
+    font-size: 2em;
+    /*Tamaño del texto del overlay*/
+    display: grid;
+    /*Hace que el overlay sea un grid*/
+    place-items: center;
+    /*Hace que el contenido del overlay se centre*/
+    border-radius: 30px 30px 0px 0px;
+    /*Bordes*/
 }
 
-.grid-projects .front img{
-    width: 100%;/*Ancho de la imagen*/
-    height: 100%;/*Altura de la imagen*/
-    border-radius: 10px;/*Bordes redondeados de la imagen*/
-    object-fit: cover;/*Hace que la imagen se ajuste al contenedor sin deformarse*/
+.grid-projects .front img {
+    width: 100%;
+    /*Ancho de la imagen*/
+    height: 100%;
+    /*Altura de la imagen*/
+    border-radius: 10px;
+    /*Bordes redondeados de la imagen*/
+    object-fit: cover;
+    /*Hace que la imagen se ajuste al contenedor sin deformarse*/
 }
 
-.grid-projects .back{
-    background-color: rgba(0, 63, 71, 0.95);/*Color de fondo de la cara trasera*/
-    transform: rotateY(180deg);/*Hace que la cara trasera este girada 180 grados*/
-    display: flex;/*Hace que la cara trasera sea un flexbox*/
-    align-items: center;/*Hace que el contenido de la cara trasera se centre verticalmente*/
-    justify-content: center;/*Hace que el contenido de la cara trasera se centre horizontalmente*/
-    color: white;/*Color del texto de la cara trasera*/
-    font-size: 10px;/*Tamaño del texto de la cara trasera*/
-    padding: 20px;/*Espacio entre el borde y el contenido de la cara trasera*/
+.grid-projects .back {
+    background-color: rgba(0, 63, 71, 0.95);
+    /*Color de fondo de la cara trasera*/
+    transform: rotateY(180deg);
+    /*Hace que la cara trasera este girada 180 grados*/
+    display: flex;
+    /*Hace que la cara trasera sea un flexbox*/
+    align-items: center;
+    /*Hace que el contenido de la cara trasera se centre verticalmente*/
+    justify-content: center;
+    /*Hace que el contenido de la cara trasera se centre horizontalmente*/
+    color: white;
+    /*Color del texto de la cara trasera*/
+    font-size: 10px;
+    /*Tamaño del texto de la cara trasera*/
+    padding: 20px;
+    /*Espacio entre el borde y el contenido de la cara trasera*/
 }
 
-.grid-projects .back h2{
+.grid-projects .back h2 {
     color: white;
     margin-top: 20px;
 }
+
 /*Hasta aqui lo de dar la vuelta a la tarjeta*/
 
 /*Lo siguiente es para mostrar las tarjetas de proyectos cuando se quiere que al pasar el raton se suba el letrero por la imagen completa*/
@@ -499,7 +559,7 @@ body{
 }*/
 /*Hasta aqui lo de cubrir la tarjeta al pasar el raton*/
 
-.information{
+.information {
     width: 100%;
     height: 70%;
     /*border: 1px solid black;*/
@@ -508,12 +568,12 @@ body{
     justify-content: space-around;
 }
 
-.information .information_image{
+.information .information_image {
     width: 50%;
     border-radius: 15px;
 }
 
-.information .information_image img{
+.information .information_image img {
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -521,17 +581,17 @@ body{
     border-radius: inherit;
 }
 
-.information p{
+.information p {
     color: black;
     width: 30%;
     font-size: 2vw;
 }
 
-.content_main .contact{
+.content_main .contact {
     display: flex;
 }
 
-.contact_form{
+.contact_form {
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -542,7 +602,8 @@ body{
     justify-content: space-around;
 }
 
-.contact_form [class^="form"]{/*Selecciona todas las clases que empiecen por 'form'*/
+.contact_form [class^="form"] {
+    /*Selecciona todas las clases que empiecen por 'form'*/
     width: 50%;
     /*height: auto;*/
     padding: 20px;
@@ -550,57 +611,70 @@ body{
     flex-direction: column;
 }
 
-.contact_form [class^="form"] label{/*Editamos los nombres de las cajas del apartado contacto*/
+.contact_form [class^="form"] label {
+    /*Editamos los nombres de las cajas del apartado contacto*/
     font-size: 20px;
     color: white;
 }
 
-.contact_form [class^="form"] input{/*Editamos las cajas de introduccion de texto, del apartado contacto, subapartados Nombre y Email*/
+.contact_form [class^="form"] input {
+    /*Editamos las cajas de introduccion de texto, del apartado contacto, subapartados Nombre y Email*/
     padding: 15px;
     width: 100%;
     height: 20%;
     border-radius: 5px;
 }
 
-.contact_form [class^="form"] textarea{/*Editamos la caja de introduccion de texto del apartado contacto, subapartado Mensaje*/
-    resize: none;/*Para que no se pueda redimensionar la caja*/
-    width: 100%;/*Ancho de la caja*/
-    min-height: 150px;/*Altura de la caja*/
+.contact_form [class^="form"] textarea {
+    /*Editamos la caja de introduccion de texto del apartado contacto, subapartado Mensaje*/
+    resize: none;
+    /*Para que no se pueda redimensionar la caja*/
+    width: 100%;
+    /*Ancho de la caja*/
+    min-height: 150px;
+    /*Altura de la caja*/
     padding: 15px;
     border-radius: 5px;
 }
 
-@media (width >= 769px){/*Para pantallas grandes como las de los ordenadores*/
-    .header_nav select{
+@media (width >=769px) {
+
+    /*Para pantallas grandes como las de los ordenadores*/
+    .header_nav select {
         display: none;
     }
 }
 
-@media (width <= 768px){/*Para pantallas pequeñas como las de los moviles*/
-    .header_nav ul{
+@media (width <=768px) {
+
+    /*Para pantallas pequeñas como las de los moviles*/
+    .header_nav ul {
         display: none;
     }
 
-    .header h2{
+    .header h2 {
         font-size: 32px;
     }
 
-    .header_nav select{/*Personalizar el selector desplegable*/
+    .header_nav select {
+        /*Personalizar el selector desplegable*/
         font-size: 16px;
     }
-    .content_main .section:first-of-type h2{/*Para el titulo Sobre Mi*/
+
+    .content_main .section:first-of-type h2 {
+        /*Para el titulo Sobre Mi*/
         margin-bottom: 0px;
     }
 
-    .content_main .section h2{
+    .content_main .section h2 {
         font-size: 1.5em;
     }
 
-    .content_main .section p{
+    .content_main .section p {
         font-size: 1em;
     }
 
-    .content_main .section img{
+    .content_main .section img {
         width: 150px;
         height: 150px;
         margin-left: 10px;
@@ -610,11 +684,11 @@ body{
         shape-margin: 20px;
     }
 
-    .content_main .section.contacto ul{
+    .content_main .section.contacto ul {
         font-size: 1em;
     }
 
-    .grid-projects{
+    .grid-projects {
         min-height: 80%;
         align-items: start;
         margin-bottom: 70px;
@@ -626,145 +700,158 @@ body{
         background-color: rgba(0, 63, 71, 0.6);
     }*/
 
-    .grid-projects .g-items{        
+    .grid-projects .g-items {
         min-height: 80%;
     }
 
-    .information{
+    .information {
         width: 100%;
         height: 80%;
         flex-direction: column;
-        justify-content: center;/*Centra venrticalmente*/
-        align-items: center;/*Alinea horizontalmente*/
+        justify-content: center;
+        /*Centra venrticalmente*/
+        align-items: center;
+        /*Alinea horizontalmente*/
     }
 
-    .information .information_image{
+    .information .information_image {
         width: 80%;
         margin: 0 auto;
     }
-    
+
     .information .information_image img {
         width: 100%;
         height: auto;
-        display: block;/* Elimina el espacio inferior típico de inline */
+        display: block;
+        /* Elimina el espacio inferior típico de inline */
         object-fit: cover;
     }
 
     .information figure {
-        margin: 0;/* Elimina los márgenes por defecto de <figure> */
+        margin: 0;
+        /* Elimina los márgenes por defecto de <figure> */
         padding: 0;
         width: 80%;
         max-width: 300px;
     }
 
-    .information p{
+    .information p {
         font-size: 1em;
         width: 90%;
     }
 
-    .habilidades{
+    .habilidades {
         align-items: normal;
     }
 
-    .container_habilidades{
+    .container_habilidades {
         width: 100%;
     }
 
-    .contact_form [class^="form"]{/*Selecciona todas las clases que empiecen por 'form'*/
-    width: 90%;
+    .contact_form [class^="form"] {
+        /*Selecciona todas las clases que empiecen por 'form'*/
+        width: 90%;
     }
 
 }
 
-@media (prefers-color-scheme: dark){/*Para el modo oscuro del sistema operativo*/
-    .header{
+@media (prefers-color-scheme: dark) {
+
+    /*Para el modo oscuro del sistema operativo*/
+    .header {
         background-color: rgb(0, 63, 71, 0.5);
     }
 
-    .content_main .section:nth-child(odd){/*Para los nones*/
+    .content_main .section:nth-child(odd) {
+        /*Para los nones*/
         background-color: rgb(20, 20, 40);
     }
 
-    .content_main .section h2{
+    .content_main .section h2 {
         color: rgb(200, 200, 255);
     }
 
-    p{
+    p {
         color: rgb(220, 220, 220);
     }
 
-    .information p{
+    .information p {
         color: rgb(220, 220, 220);
     }
 }
 
-@media (orientation: landscape){/*Para pantallas en horizontal*/
-    
+@media (orientation: landscape) {
+    /*Para pantallas en horizontal*/
+
 }
 
 /*Solo para dispositivos que interactuan con pantallas y el ancho de pantalla es mayor o igual a 768px. Si se le pone not en vez de only  haria todo lo contrario*/
-@media only screen and (width >= 768px){
-    
-}
+@media only screen and (width >=768px) {}
 
 /*Solo para dispositivos que interactuan con pantallas y el ancho de pantalla es mayor o igual a 768px y esta en horizontal.*/
-@media only screen and (width >= 768px) and (orientation: landscape){
-    
-}
+@media only screen and (width >=768px) and (orientation: landscape) {}
 
 /*Esto sirve para cuando se imprime la pagina cambiarle algo.*/
-@media print{
-
-}
+@media print {}
 
 /*ANIMACIONES*/
 
-@keyframes moveXHTML {/*Esto es para hacer una animacion de la barra de progreso*/
-    from{
+@keyframes moveXHTML {
+
+    /*Esto es para hacer una animacion de la barra de progreso*/
+    from {
         width: 0%;
     }
 
-    to{
+    to {
         width: 70%;
     }
 }
 
-@keyframes moveXCSS {/*Esto es para hacer una animacion de la barra de progreso*/
-    from{
+@keyframes moveXCSS {
+
+    /*Esto es para hacer una animacion de la barra de progreso*/
+    from {
         width: 0%;
     }
 
-    to{
+    to {
         width: 70%;
     }
 }
 
-@keyframes moveXJS {/*Esto es para hacer una animacion de la barra de progreso*/
-    from{
+@keyframes moveXJS {
+
+    /*Esto es para hacer una animacion de la barra de progreso*/
+    from {
         width: 0%;
     }
 
-    to{
+    to {
         width: 50%;
     }
 }
 
-@keyframes moveXPHP {/*Esto es para hacer una animacion de la barra de progreso*/
-    from{
+@keyframes moveXPHP {
+
+    /*Esto es para hacer una animacion de la barra de progreso*/
+    from {
         width: 0%;
     }
 
-    to{
+    to {
         width: 15%;
     }
 }
 
-@keyframes moveXMYSQL {/*Esto es para hacer una animacion de la barra de progreso*/
-    from{
+@keyframes moveXMYSQL {
+
+    /*Esto es para hacer una animacion de la barra de progreso*/
+    from {
         width: 0%;
     }
 
-    to{
+    to {
         width: 15%;
     }
 }
