@@ -753,6 +753,17 @@ body {
         width: 90%;
     }
 
+    .grid-projects .front img {
+        width: 100%;
+        /*Ancho de la imagen*/
+        height: 100%;
+        /*Altura de la imagen*/
+        border-radius: 10px;
+        /*Bordes redondeados de la imagen*/
+        object-fit: cover;
+        /*Hace que la imagen se ajuste al contenedor sin deformarse*/
+    }
+
 }
 
 @media (prefers-color-scheme: dark) {
