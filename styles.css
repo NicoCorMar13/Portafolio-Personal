@@ -654,9 +654,11 @@ body {
     }
 }
 
+/*Para pantallas pequeñas como las de los moviles*/
 @media (width <=768px) {
+    
+    /*====HEADER====*/
 
-    /*Para pantallas pequeñas como las de los moviles*/
     .header_nav ul {
         display: none;
     }
@@ -669,6 +671,9 @@ body {
         /*Personalizar el selector desplegable*/
         font-size: 16px;
     }
+    /*========*/
+
+    /*====MAIN====*/
 
     .content_main .section:first-of-type h2 {
         /*Para el titulo Sobre Mi*/
@@ -697,21 +702,9 @@ body {
         font-size: 1em;
     }
 
-    .grid-projects {
-        min-height: 80%;
-        align-items: start;
-        margin-bottom: 70px;
-    }
+    /*========*/
 
-    /*.grid-projects .g-items .overlay{
-        height: 100%;
-        border-radius: 0;
-        background-color: rgba(0, 63, 71, 0.6);
-    }*/
-
-    .grid-projects .g-items {
-        min-height: 80%;
-    }
+    /*====INFORMATION====*/
 
     .information {
         width: 100%;
@@ -749,6 +742,10 @@ body {
         width: 90%;
     }
 
+    /*========*/
+
+    /*====HABILIDADES====*/
+
     .habilidades {
         align-items: normal;
     }
@@ -757,44 +754,36 @@ body {
         width: 100%;
     }
 
+    /*========*/
+
+    /*====PROJECTS====*/
+
+    .grid-projects {
+        min-height: 80%;
+        align-items: start;
+        margin-bottom: 70px;
+    }
+
+    /*.grid-projects .g-items .overlay{
+        height: 100%;
+        border-radius: 0;
+        background-color: rgba(0, 63, 71, 0.6);
+    }*/
+
+    .grid-projects .g-items {
+        min-height: 80%;
+    }
+
+    /*========*/
+
+    /*====CONTACTO====*/    
+
     .contact_form [class^="form"] {
         /*Selecciona todas las clases que empiecen por 'form'*/
         width: 90%;
     }
 
-    /* 1) Que el grid ocupe casi todo el ancho en móvil */
-    .grid-projects {
-        max-width: 92%;
-        width: 92%;
-        grid-template-columns: 1fr;
-        /* 1 columna */
-        gap: 16px;
-        margin: 0 auto 70px;
-    }
-
-    /* 2) Ajuste de la altura de la card (si quieres que no sea tan alta) */
-    .grid-projects .card {
-        height: 260px;
-        /* prueba 240-300 según te guste */
-    }
-
-    /* 3) Overlay: texto y caja más “mobile-friendly” */
-    .grid-projects .front .overlay {
-        font-size: clamp(18px, 5vw, 26px);
-        height: 40%;
-        /* antes 50% */
-        padding: 12px;
-        border-radius: 16px 16px 0 0;
-        /* antes 30px */
-        text-align: center;
-    }
-
-    /* 4) Imagen bien ajustada */
-    .grid-projects .front img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
+    /*========*/
 
 }
 
