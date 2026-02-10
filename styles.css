@@ -207,7 +207,7 @@ body {
 
 .container_habilidades [class^="habilidad"]:first-of-type .progreso .barra::after {
     /*Numero de las barras de progreso*/
-    content: '85%';
+    content: '70%';
     position: absolute;
     right: 0px;
     top: 0px;
@@ -230,7 +230,7 @@ body {
 }
 
 .container_habilidades [class^="habilidad"]:nth-of-type(2) .progreso .barra::after {
-    content: '80%';
+    content: '70%';
     position: absolute;
     right: 0px;
     top: 0px;
@@ -250,7 +250,7 @@ body {
 }
 
 .container_habilidades [class^="habilidad"]:nth-of-type(3) .progreso .barra::after {
-    content: '15%';
+    content: '50%';
     position: absolute;
     right: 0px;
     top: 0px;
