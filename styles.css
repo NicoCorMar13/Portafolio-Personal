@@ -250,7 +250,7 @@ body {
 }
 
 .container_habilidades [class^="habilidad"]:nth-of-type(3) .progreso .barra::after {
-    content: '50%';
+    content: '5%';
     position: absolute;
     right: 0px;
     top: 0px;
@@ -753,7 +753,7 @@ body {
         width: 90%;
     }
 
-    /* Que el grid ocupe casi todo el ancho en móvil */
+    /* 1) Que el grid ocupe casi todo el ancho en móvil */
     .grid-projects {
         max-width: 92%;
         width: 92%;
@@ -763,13 +763,13 @@ body {
         margin: 0 auto 70px;
     }
 
-    /* Ajuste de la altura de la card (si quieres que no sea tan alta) */
+    /* 2) Ajuste de la altura de la card (si quieres que no sea tan alta) */
     .grid-projects .card {
         height: 260px;
         /* prueba 240-300 según te guste */
     }
 
-    /* Overlay: texto y caja más “mobile-friendly” */
+    /* 3) Overlay: texto y caja más “mobile-friendly” */
     .grid-projects .front .overlay {
         font-size: clamp(18px, 5vw, 26px);
         height: 42%;
@@ -780,7 +780,7 @@ body {
         text-align: center;
     }
 
-    /* Imagen bien ajustada */
+    /* 4) Imagen bien ajustada */
     .grid-projects .front img {
         height: 100%;
         width: 100%;
