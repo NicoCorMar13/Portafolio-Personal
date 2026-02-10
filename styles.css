@@ -17,13 +17,6 @@ body {
     height: 100%;
 }
 
-html,
-body {
-    /*Para que el body y el html ocupen toda la pantalla, y asi se pueda hacer scroll*/
-    overflow-x: hidden;
-    /*Para evitar que aparezca una barra de scroll horizontal si algun elemento se sale del ancho de la pantalla*/
-}
-
 .header {
     width: 100%;
     /*si se le pone 'vw' detras del 100, en vez del %, es para que ocupe el ancho completo de la ventana del navegador*/
