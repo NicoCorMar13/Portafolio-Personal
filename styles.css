@@ -17,7 +17,8 @@ body {
     height: 100%;
 }
 
-html, body {
+html,
+body {
     /*Para que el body y el html ocupen toda la pantalla, y asi se pueda hacer scroll*/
     overflow-x: hidden;
     /*Para evitar que aparezca una barra de scroll horizontal si algun elemento se sale del ancho de la pantalla*/
@@ -46,7 +47,7 @@ html, body {
     /*font-size: clamp(3vw, 5vw, 8vw);  Esto sirve para decirle a la pagina en el siguiente orden el tamaño minimo, ideal, maximo. Si usamos esto en la parte @media para pantallas pequeñas no haria falta poner nada*/
     margin-left: 2%;
     padding: 10px;
-    position: static;
+    position: fixed;
 }
 
 .header .header_nav {
@@ -759,13 +760,38 @@ html, body {
         width: 90%;
     }
 
+    /* Que el grid ocupe casi todo el ancho en móvil */
+    .grid-projects {
+        max-width: 92%;
+        width: 92%;
+        grid-template-columns: 1fr;
+        /* 1 columna */
+        gap: 16px;
+        margin: 0 auto 70px;
+    }
+
+    /* Ajuste de la altura de la card (si quieres que no sea tan alta) */
+    .grid-projects .card {
+        height: 260px;
+        /* prueba 240-300 según te guste */
+    }
+
+    /* Overlay: texto y caja más “mobile-friendly” */
+    .grid-projects .front .overlay {
+        font-size: clamp(18px, 5vw, 26px);
+        height: 42%;
+        /* antes 50% */
+        padding: 12px;
+        border-radius: 18px 18px 0 0;
+        /* antes 30px */
+        text-align: center;
+    }
+
+    /* Imagen bien ajustada */
     .grid-projects .front img {
-        min-height: 80%;
-        /*Altura de la imagen*/
-        border-radius: 10px;
-        /*Bordes redondeados de la imagen*/
+        height: 100%;
+        width: 100%;
         object-fit: cover;
-        /*Hace que la imagen se ajuste al contenedor sin deformarse*/
     }
 
 }
