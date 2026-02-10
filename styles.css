@@ -453,20 +453,31 @@ body {
 /*=====PROYECTOS====*/
 
 .content_main .proyectos a {
-    display: block;/*Hace que el enlace ocupe todo el espacio de su contenedor, lo que facilita hacer clic en él*/
-    color: inherit;/*Hace que el enlace herede el color del texto de su contenedor, en lugar de usar el color predeterminado de los enlaces (generalmente azul)*/
-    text-align: center;/*Centra el texto dentro del enlace*/
-    font-size: large;/*Hace que el texto del enlace sea grande, lo que puede mejorar la legibilidad y hacer que el enlace sea más destacado*/
+    display: block;
+    /*Hace que el enlace ocupe todo el espacio de su contenedor, lo que facilita hacer clic en él*/
+    color: inherit;
+    /*Hace que el enlace herede el color del texto de su contenedor, en lugar de usar el color predeterminado de los enlaces (generalmente azul)*/
+    text-align: center;
+    /*Centra el texto dentro del enlace*/
+    font-size: large;
+    /*Hace que el texto del enlace sea grande, lo que puede mejorar la legibilidad y hacer que el enlace sea más destacado*/
 }
 
 .grid-projects {
-    max-width: 70%;/*Hace que el grid no ocupe todo el ancho de la pantalla, y se vea mejor en pantallas grandes*/
-    min-height: 50%;/*Hace que el grid ocupe al menos el 50% de la altura de su contenedor, lo que puede ayudar a mantener una apariencia equilibrada y evitar que el contenido se vea demasiado apretado o desordenado*/
-    display: grid;/*Hace que el contenedor se comporte como un grid, lo que permite organizar su contenido en filas y columnas de manera eficiente y flexible*/
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));/*Hace que el grid tenga tantas columnas como sea posible, con un ancho mínimo de 200px y un ancho máximo de 1fr (que es una fracción del espacio disponible)*/
-    grid-template-rows: repeat(auto, 1fr);/*Hace que el grid tenga tantas filas como sea necesario, con un alto de 1fr (que es una fracción del espacio disponible)*/
-    gap: 20px;/*Hace que haya un espacio de 20px entre las filas y columnas del grid, lo que puede mejorar la legibilidad y la apariencia general del diseño*/
-    margin: 0 auto;/*Hace que el grid se centre horizontalmente dentro de su contenedor, lo que puede mejorar la apariencia y la simetría del diseño*/
+    max-width: 70%;
+    /*Hace que el grid no ocupe todo el ancho de la pantalla, y se vea mejor en pantallas grandes*/
+    min-height: 50%;
+    /*Hace que el grid ocupe al menos el 50% de la altura de su contenedor, lo que puede ayudar a mantener una apariencia equilibrada y evitar que el contenido se vea demasiado apretado o desordenado*/
+    display: grid;
+    /*Hace que el contenedor se comporte como un grid, lo que permite organizar su contenido en filas y columnas de manera eficiente y flexible*/
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /*Hace que el grid tenga tantas columnas como sea posible, con un ancho mínimo de 200px y un ancho máximo de 1fr (que es una fracción del espacio disponible)*/
+    grid-template-rows: repeat(auto, 1fr);
+    /*Hace que el grid tenga tantas filas como sea necesario, con un alto de 1fr (que es una fracción del espacio disponible)*/
+    gap: 20px;
+    /*Hace que haya un espacio de 20px entre las filas y columnas del grid, lo que puede mejorar la legibilidad y la apariencia general del diseño*/
+    margin: 0 auto;
+    /*Hace que el grid se centre horizontalmente dentro de su contenedor, lo que puede mejorar la apariencia y la simetría del diseño*/
 }
 
 /*A partir de aqui es el codigo para las tarjetas de proyectos que dan la vuelta al pasar el raton*/
@@ -493,7 +504,7 @@ body {
 .grid-projects .card:hover {
     transform: rotateY(180deg);
     /*Hace que la tarjeta gire 180 grados en el eje Y al pasar el raton por encima*/
-    transition: transform 0.8s;
+    /*transition: transform 0.8s;*/
     /*Hace que la transicion del giro dure 0.8 segundos*/
 }
 
@@ -508,6 +519,7 @@ body {
     border-radius: 10px;
     /*-----------*/
     inset: 0;
+    /*Hace que los elementos se posicionen en la parte superior izquierda de su padre, y ocupen todo el espacio de su padre*/
     /*-----------*/
 }
 
@@ -532,12 +544,12 @@ body {
     /*Hace que el contenido del overlay se centre*/
     border-radius: 30px 30px 0px 0px;
     /*Bordes*/
-    /*-----------*/
+    /*-----------
     left: 0;
     right: 0;
     margin: 0;
     box-sizing: border-box;
-    /*-----------*/
+    -----------*/
 }
 
 .grid-projects .front img {
