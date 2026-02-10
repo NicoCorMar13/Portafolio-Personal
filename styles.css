@@ -452,8 +452,6 @@ body {
 
 /*=====PROYECTOS====*/
 
-/* ========= PROYECTOS (FLIP LIMPIO Y ESTABLE) ========= */
-
 .grid-projects {
     max-width: 70%;
     display: grid;
@@ -543,6 +541,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.grid-projects .back .description h2{
+    position: top;
+}
+
+.grid-projects .back .description a{
+    color: inherit;
 }
 
 
