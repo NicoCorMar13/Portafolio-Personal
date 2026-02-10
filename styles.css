@@ -452,140 +452,99 @@ body {
 
 /*=====PROYECTOS====*/
 
-.content_main .proyectos a {
-    display: block;
-    /*Hace que el enlace ocupe todo el espacio de su contenedor, lo que facilita hacer clic en él*/
-    color: inherit;
-    /*Hace que el enlace herede el color del texto de su contenedor, en lugar de usar el color predeterminado de los enlaces (generalmente azul)*/
-    text-align: center;
-    /*Centra el texto dentro del enlace*/
-    font-size: large;
-    /*Hace que el texto del enlace sea grande, lo que puede mejorar la legibilidad y hacer que el enlace sea más destacado*/
-}
+/* ========= PROYECTOS (FLIP LIMPIO Y ESTABLE) ========= */
 
 .grid-projects {
     max-width: 70%;
-    /*Hace que el grid no ocupe todo el ancho de la pantalla, y se vea mejor en pantallas grandes*/
-    min-height: 50%;
-    /*Hace que el grid ocupe al menos el 50% de la altura de su contenedor, lo que puede ayudar a mantener una apariencia equilibrada y evitar que el contenido se vea demasiado apretado o desordenado*/
     display: grid;
-    /*Hace que el contenedor se comporte como un grid, lo que permite organizar su contenido en filas y columnas de manera eficiente y flexible*/
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    /*Hace que el grid tenga tantas columnas como sea posible, con un ancho mínimo de 200px y un ancho máximo de 1fr (que es una fracción del espacio disponible)*/
-    grid-template-rows: repeat(auto, 1fr);
-    /*Hace que el grid tenga tantas filas como sea necesario, con un alto de 1fr (que es una fracción del espacio disponible)*/
     gap: 20px;
-    /*Hace que haya un espacio de 20px entre las filas y columnas del grid, lo que puede mejorar la legibilidad y la apariencia general del diseño*/
     margin: 0 auto;
-    /*Hace que el grid se centre horizontalmente dentro de su contenedor, lo que puede mejorar la apariencia y la simetría del diseño*/
 }
 
-/*A partir de aqui es el codigo para las tarjetas de proyectos que dan la vuelta al pasar el raton*/
 .grid-projects .g-items {
     perspective: 2000px;
-    /*Sirve para dar profundidad al elemento 3D, mientras menos valor mas se distorsiona y parece que esta mas cerca*/
 }
 
 .grid-projects .card {
-    width: 100%;
-    /*Ancho de la tarjeta*/
-    height: 300px;
-    /*Altura de la tarjeta*/
     position: relative;
-    /*Para que los elementos hijos se posicionen en relacion a este elemento*/
+    width: 100%;
+    height: 300px;
     transform-style: preserve-3d;
-    /*Hace que los elementos hijos se posicionen en 3D*/
-    /*-----------*/
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.8s;
+    will-change: transform;
     border-radius: 10px;
-    overflow: hidden;
-    /*-----------*/
 }
 
+/* El hover SOLO rota */
 .grid-projects .card:hover {
     transform: rotateY(180deg);
-    /*Hace que la tarjeta gire 180 grados en el eje Y al pasar el raton por encima*/
-    /*transition: transform 0.8s;*/
-    /*Hace que la transicion del giro dure 0.8 segundos*/
 }
 
+/* Caras */
 .grid-projects .front,
 .grid-projects .back {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    position: absolute;
-    /*Para que los elementos se posicionen en relacion a su padre*/
-    backface-visibility: hidden;
-    /*Hace que la cara trasera no sea visible cuando se gira la tarjeta*/
     border-radius: 10px;
-    /*-----------*/
-    inset: 0;
-    /*Hace que los elementos se posicionen en la parte superior izquierda de su padre, y ocupen todo el espacio de su padre*/
-    /*-----------*/
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    /* Recorte AQUÍ, no en .card */
+    overflow: hidden;
 }
 
+/* Frontal */
+.grid-projects .front {
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+}
+
+/* Imagen sin radios (los da el contenedor) */
+.grid-projects .front img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay exacto */
 .grid-projects .front .overlay {
     position: absolute;
-    /*Para que el overlay se posicione en relacion a su padre*/
-    bottom: 0;
-    /*Para que el overlay se posicione en la parte inferior de su padre*/
-    height: 50%;
-    /*Altura del overlay*/
-    background-color: rgba(0, 63, 71, 0.95);
-    /*Color de fondo del overlay*/
-    width: 100%;
-    /*Ancho del overlay*/
-    color: white;
-    /*Color del texto del overlay*/
-    font-size: 2em;
-    /*Tamaño del texto del overlay*/
-    display: grid;
-    /*Hace que el overlay sea un grid*/
-    place-items: center;
-    /*Hace que el contenido del overlay se centre*/
-    border-radius: 30px 30px 0px 0px;
-    /*Bordes*/
-    /*-----------
     left: 0;
     right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
     margin: 0;
     box-sizing: border-box;
-    -----------*/
-}
 
-.grid-projects .front img {
-    width: 100%;
-    /*Ancho de la imagen*/
-    height: 100%;
-    /*Altura de la imagen*/
-    border-radius: 10px;
-    /*Bordes redondeados de la imagen*/
-    object-fit: cover;
-    /*Hace que la imagen se ajuste al contenedor sin deformarse*/
-}
-
-.grid-projects .back {
     background-color: rgba(0, 63, 71, 0.95);
-    /*Color de fondo de la cara trasera*/
-    transform: rotateY(180deg);
-    /*Hace que la cara trasera este girada 180 grados*/
-    display: flex;
-    /*Hace que la cara trasera sea un flexbox*/
-    align-items: center;
-    /*Hace que el contenido de la cara trasera se centre verticalmente*/
-    justify-content: center;
-    /*Hace que el contenido de la cara trasera se centre horizontalmente*/
     color: white;
-    /*Color del texto de la cara trasera*/
-    font-size: 10px;
-    /*Tamaño del texto de la cara trasera*/
-    padding: 20px;
-    /*Espacio entre el borde y el contenido de la cara trasera*/
+    display: grid;
+    place-items: center;
+
+    /* radio más pequeño para que no "asome" */
+    border-radius: 18px 18px 0 0;
+    font-size: 2em;
 }
 
-.grid-projects .back h2 {
+/* Trasera */
+.grid-projects .back {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    background-color: rgba(0, 63, 71, 0.95);
     color: white;
-    margin-top: 20px;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 /*Hasta aqui lo de dar la vuelta a la tarjeta*/
 
