@@ -545,9 +545,9 @@ body {
     text-align: center;
 }
 
-/*.grid-projects .back .description h2{
-    position: top;
-}*/
+.grid-projects .back .description h2{
+    position: inherit ;
+}
 
 .grid-projects .back .description a{
     color: inherit;
