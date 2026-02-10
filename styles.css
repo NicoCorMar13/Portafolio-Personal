@@ -250,7 +250,7 @@ body {
 }
 
 .container_habilidades [class^="habilidad"]:nth-of-type(3) .progreso .barra::after {
-    content: '5%';
+    content: '50%';
     position: absolute;
     right: 0px;
     top: 0px;
