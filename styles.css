@@ -491,7 +491,7 @@ body {
     margin: 0;
     box-sizing: border-box;
     /*-----------*/
-    }
+}
 
 .grid-projects .front img {
     width: 100%;
@@ -649,6 +649,44 @@ body {
     padding: 15px;
     border-radius: 5px;
 }
+
+/* ========= FIX FLIP + OVERLAY ========= */
+
+/* 1) Transición SIEMPRE en .card */
+.grid-projects .card {
+    transition: transform 0.8s;
+    /* antes estaba en :hover */
+    will-change: transform;
+}
+
+.grid-projects .card:hover {
+    transform: rotateY(180deg);
+}
+
+/* 2) Recortar en la cara frontal (imagen + overlay) */
+.grid-projects .front {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* 3) Imagen: evitar “descuadre” por inline */
+.grid-projects .front img {
+    display: block;
+    /* CLAVE */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 4) Overlay: siempre exacto al ancho */
+.grid-projects .front .overlay {
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 
 @media (width >=769px) {
 
