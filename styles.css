@@ -546,7 +546,12 @@ body {
 }
 
 .grid-projects .back .description h2{
-    position: inherit ;
+    position: inherit;
+    font-size: medium;
+}
+
+.grid-projects .back .description p{
+    font-size: small;
 }
 
 .grid-projects .back .description a{
