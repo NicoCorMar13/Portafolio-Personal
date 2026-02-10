@@ -183,7 +183,7 @@ body{
 }
 
 .container_habilidades [class^="habilidad"]:first-of-type .progreso .barra{/*Barra de progreso*/
-    width: 85%;
+    width: 70%;
     animation-name: moveXHTML;
     animation-duration: 4s;
     animation-timing-function: ease;
@@ -207,7 +207,7 @@ body{
 }
 
 .container_habilidades [class^="habilidad"]:nth-of-type(2) .progreso .barra{
-    width: 80%;
+    width: 70%;
     animation-name: moveXCSS;
     animation-duration: 4s;
     animation-timing-function: ease;
@@ -227,7 +227,7 @@ body{
 }
 
 .container_habilidades [class^="habilidad"]:nth-of-type(3) .progreso .barra{
-    width: 15%;
+    width: 50%;
     animation-name: moveXJS;
     animation-duration: 4s;
     animation-timing-function: ease;
@@ -725,7 +725,7 @@ body{
     }
 
     to{
-        width: 85%;
+        width: 70%;
     }
 }
 
@@ -735,7 +735,7 @@ body{
     }
 
     to{
-        width: 80%;
+        width: 70%;
     }
 }
 
@@ -745,7 +745,7 @@ body{
     }
 
     to{
-        width: 15%;
+        width: 50%;
     }
 }
 
