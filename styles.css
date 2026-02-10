@@ -754,9 +754,7 @@ body {
     }
 
     .grid-projects .front img {
-        width: 100%;
-        /*Ancho de la imagen*/
-        height: 100%;
+        min-height: 80%;
         /*Altura de la imagen*/
         border-radius: 10px;
         /*Bordes redondeados de la imagen*/
